@@ -311,7 +311,7 @@ module.exports = NorminetteLinter =
       lintOnFly: false
       lint: (textEditor) =>
         creatorLogin = @headerCreator(textEditor.getBuffer().getText())
-        if (Object.keys(atom.config.settings['norminette-linter']) != 'undefined' && Object.keys(atom.config.settings['norminette-linter']).length > 0){           
+        if (type of Object.keys(atom.config.settings['norminette-linter']).filter((s) -> s.startsWith('rules_')).map((s) -> s.replace('rules_', '')) != 'undefined' && Object.keys(atom.config.settings['norminette-linter']).filter((s) -> s.startsWith('rules_')).map((s) -> s.replace('rules_', '')).length > 0){           
           rules = Object.keys(atom.config.settings['norminette-linter']).filter((s) -> s.startsWith('rules_')).map((s) -> s.replace('rules_', '')) 
           }
         if rules.length > 0
